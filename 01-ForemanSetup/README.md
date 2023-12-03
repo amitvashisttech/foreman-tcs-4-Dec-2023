@@ -44,7 +44,7 @@ echo "deb http://deb.theforeman.org/ plugins 3.8" | sudo tee -a /etc/apt/sources
 sudo apt-get update && sudo apt-get -y install foreman-installer
 ```
 
-### Step 10: Running the installer - Ensure the FQDN Resolution ( ping $(hostname -f)
+### Step 10: Running the installer - Ensure the FQDN Resolution [ ping $(hostname -f) ]
 ```
 sudo foreman-installer
 ```
@@ -65,16 +65,16 @@ sudo foreman-installer
 ### Bring up a specific virtalbox instances 
 ```
 vagrant.exe status 
-vagrant.exe up docker 
+vagrant.exe up master 
 ```
 ### Bring down a specific virtalbox instances 
 ```
 vagrant.exe status 
-vagrant.exe halt docker 
+vagrant.exe halt master 
 ```
 
 ### Destroy a specific virtalbox instances 
 ```
 vagrant.exe status 
-vagrant.exe destroy docker 
+vagrant.exe destroy master 
 ```
