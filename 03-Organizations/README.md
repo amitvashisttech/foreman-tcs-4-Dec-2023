@@ -1,6 +1,6 @@
 # Foreman Organiztaions 
 
-### Creating an Organiztaion
+## Creating an Organiztaion
 
 ### 1. Click the Administer → Organizations menu on the top right-hand corner.
 ### 2. Click the New Organization button.
@@ -17,7 +17,7 @@ Click the Proceed to Edit button to skip assigning hosts.
 
 
 
-### Removing an Organization 
+## Removing an Organization 
 
 ### 1. Click the Administer → Organizations menu on the top right hand corner.
 ### 2. Select Delete from the drop down menu to the right of the name of the organization you want to remove.
