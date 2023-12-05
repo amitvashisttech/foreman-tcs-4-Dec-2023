@@ -23,3 +23,30 @@ Click the Proceed to Edit button to skip assigning hosts.
 ### 2. Select Delete from the drop down menu to the right of the name of the organization you want to remove.
 ### 3. An alert box appears:
 
+
+
+
+
+## Creating an Locations
+
+### 1. Click the Administer → Locations menu on the top right-hand corner.
+### 2. Click the New  button.
+### 3. Type in the name of the new location in the Name field.
+### 4. Type in the label of the new location in the Label field.
+### 5. Type in a description of the new location in the Description field.
+### 6. Click the Submit button.
+### 7. Select the hosts to assign to the new location.
+```
+Click the Assign All button to assign all hosts with no location to the new location.
+Click the Manually Assign button to manually select and assign the hosts with no location.
+Click the Proceed to Edit button to skip assigning hosts.
+```
+
+
+
+## Removing an location
+
+### 1. Click the Administer → locations menu on the top right hand corner.
+### 2. Select Delete from the drop down menu to the right of the name of the location you want to remove.
+### 3. An alert box appears:
+
