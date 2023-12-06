@@ -28,8 +28,14 @@ Memory   : 9048
 ```
 vagrant up katello-foreman
 ```
+### 7. Export the "xterm" 
+```
+export TERM=xterm >> ~/.bashrc
+sourc ~/.bashrc
+```
 
-### 7. Login to katello-foreman instance & update the local resolver file "/etc/hosts"
+
+### 8. Login to katello-foreman instance & update the local resolver file "/etc/hosts"
 ```
 vi /etc/hosts
 ```
