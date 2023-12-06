@@ -28,3 +28,20 @@ Memory   : 9048
 ```
 vagrant up katello-foreman
 ```
+
+7. Login to katello-foreman instance & update the local resolver file "/etc/hosts"
+```
+vi /etc/hosts
+```
+
+Add the following lines 
+```
+172.31.0.110 katello-foreman.example.com katello-foreman
+```
+
+Check the resolutions 
+```
+hostname -f 
+hostname -i 
+ping -c2 katello-foreman
+```
