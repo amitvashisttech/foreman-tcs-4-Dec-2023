@@ -71,8 +71,9 @@ Note : Don't use vagrant up katello-foreman command, else it will delete the exi
 cd /etc/sysconfig/network-scripts/
 cp -rf ifcfg-eth1 ifcfg-eth2 
 vi ifcfg-eth2 
-
+```
 ## Update the following: 
+
 ```
 [root@katello-foreman network-scripts]# cat ifcfg-eth2
 
