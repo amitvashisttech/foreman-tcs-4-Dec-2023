@@ -51,3 +51,21 @@ hostname -f
 hostname -i 
 ping -c2 katello-foreman
 ```
+
+### 9. Now we need to a new network interface, which will be used for "Internal Network Communication" & for our proxy setup. 
+
+```
+1. Power off the VM from Virtual Box 
+2. Select the "katello-foreman" --> Settings --> Network --> Adaptor 3 
+[*] Enable Network Adapter
+    Attached to : "Internal Network"
+    Save. 
+
+3. Power on the VM from Virtual Box Only 
+```
+Note : Don't use vagrant up katello-foreman command, else it will delete the exiting "Internal Network" Interface. 
+
+
+
+
+    
