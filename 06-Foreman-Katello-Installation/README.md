@@ -16,14 +16,14 @@ yum clean all
 yum install https://yum.theforeman.org/releases/3.3/el7/x86_64/foreman-release.rpm -y 
 ```
 ```
-yum install https://yum.theforeman.org/katello/4.5/katello/el7/x86_64/katello-repos-latest.rpm
+yum install -y  https://yum.theforeman.org/katello/4.5/katello/el7/x86_64/katello-repos-latest.rpm
 ```
 ```
-yum install https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
+yum install -y https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
 ```
 
 ```
-yum install epel-release centos-release-scl-rh
+yum install -y epel-release centos-release-scl-rh
 ```
 
 ### 4. Run the yum update 
