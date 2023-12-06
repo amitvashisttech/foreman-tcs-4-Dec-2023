@@ -44,7 +44,8 @@ foreman-installer --scenario katello \
 --foreman-proxy-dns true \
 --foreman-proxy-dns-interface eth2 \
 --foreman-proxy-dns-zone example.com
---foreman-proxy-dns-forwarders 192.168.0.1 \
+--foreman-proxy-dns-forwarders 8.8.8.8 \
+--foreman-proxy-dns-forwarders 8.8.4.4 \
 --foreman-proxy-dns-reverse 0.168.192.in-addr.arpa \
 --foreman-proxy-dhcp true \
 --foreman-proxy-dhcp-interface eth2 \
