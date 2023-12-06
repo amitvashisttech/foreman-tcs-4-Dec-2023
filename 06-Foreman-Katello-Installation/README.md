@@ -43,7 +43,7 @@ foreman-installer --scenario katello \
 --foreman-initial-admin-username admin \
 --foreman-proxy-dns true \
 --foreman-proxy-dns-interface eth2 \
---foreman-proxy-dns-zone plentree.com
+--foreman-proxy-dns-zone example.com
 --foreman-proxy-dns-forwarders 192.168.0.1 \
 --foreman-proxy-dns-reverse 0.168.192.in-addr.arpa \
 --foreman-proxy-dhcp true \
