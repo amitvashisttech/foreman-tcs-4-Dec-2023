@@ -1,0 +1,41 @@
+# -*- mode: ruby -*-
+
+# vi: set ft=ruby :
+
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+
+Vagrant.configure(2) do |config|
+
+
+ # Master Server
+
+ config.vm.define "katello-foreman" do |master|
+
+   master.vm.box = "centos/7"
+
+   master.vm.hostname = "katello-foreman.example.com"
+
+   master.vm.network "private_network", ip: "172.31.0.110"
+
+   master.vm.provider "virtualbox" do |v|
+
+     v.name = "katello-foreman"
+
+     v.memory = 9048
+
+     v.cpus = 2
+
+     # Prevent VirtualBox from interfering with host audio stack
+
+     v.customize ["modifyvm", :id, "--audio", "none"]
+
+   end
+
+   #master.vm.provision "shell", path: "bootstrap_master.sh"
+
+ end
+
+
+end
