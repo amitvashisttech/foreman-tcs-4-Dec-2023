@@ -1,6 +1,6 @@
 # Add DHCP configuration to Foreman
 
-###Create the subnet 'foreman' and associate Smart proxies
+### Create the subnet 'foreman' and associate Smart proxies
 
 
 
