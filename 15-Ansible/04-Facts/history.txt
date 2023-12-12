@@ -1,0 +1,20 @@
+ 994  cd 04-Facts/
+  995  ls
+  996  ansible-doc  -l
+  997  ansible-doc  setup
+  998  ansible 172.31.0.100 -m setup -u vagrant -k
+  999  ansible 172.31.0.100 -m setup
+ 1000  ansible 172.31.0.100 -m setup  -a "filter=ansible_os_family"
+ 1001  ansible 172.31.0.100 -m setup  -a "filter=ansible_processor"
+ 1002  ansible 172.31.0.100 -m setup  -a "filter=ansible_nodename"
+ 1003  ansible 172.31.0.100 -m setup  -a "filter=ansible_fqdn"
+ 1004  ansible all -m setup  -a "filter=ansible_fqdn"
+ 1005  ansible all -m setup --tree ./ansible_facts
+ 1006  ls
+ 1007  cd ansible_facts/
+ 1008  ls
+ 1009  cat 127.0.0.1
+ 1010  cat 172.31.0.100
+ 1011  cat master.example.com
+ 1012  python -m json.tool  master.example.com
+

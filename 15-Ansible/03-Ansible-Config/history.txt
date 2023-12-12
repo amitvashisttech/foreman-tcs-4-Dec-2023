@@ -1,0 +1,53 @@
+253  mkdir 15-Ansible/01-Inventory -p
+  254  ls
+  255  cd 15-Ansible/01-Inventory/
+  256  ls
+  257  vim hosts
+  258  s
+  259  ls
+  260  cat hosts
+  261  ansible all -i hosts -m ping
+  262  ansible all -i hosts -m ping -u vagrant
+  263  ansible all -i hosts -m ping -u vagrant -k
+  264  s
+  265  > /root/.ssh/known_hosts
+  266  ls
+  267  ansible all -i hosts -m ping -u vagrant -k
+  268  s
+  269  ls
+  270  vim hosts
+  271  ansible all -i hosts -m ping -u vagrant -k
+  272  ls
+  273  vim hosts
+  274  ls
+  275  ansible web -i hosts -m ping -u vagrant -k
+  276  ansible db -i hosts -m ping -u vagrant -k
+  277  vim hosts
+  278  ansible web -i hosts -m ping -u vagrant -k
+  279  cat /root/.ssh/known_hosts
+  280  ansible 172.31.0.100 -i hosts -m ping -u vagrant -k
+  281  ssh vagrant@172.31.0.100
+  282  cat /root/.ssh/known_hosts
+  283  ansible 172.31.0.100 -i hosts -m ping -u vagrant -k
+  284  ls
+  285  ansible web -i hosts -m ping -u vagrant -k
+  286  ls
+  287  vim hosts
+  288  ls
+  289  ansible dc -i hosts -m ping -u vagrant -k
+  290  ls
+  291  vim hosts
+  292  ansible dc -i hosts -m ping -u vagrant -k
+  293  ls
+  294  vim hosts
+  295  ls
+  296  ansible dc -i hosts -m ping
+  297  hostname
+  298  hostname -f
+  299  vim hosts
+  300  ansible dc -i hosts -m ping
+  301  ssh vagrant@master.example.com
+  302  ansible dc -i hosts -m ping
+  303  vim hosts
+  304  ansible dc -i hosts -m ping
+
