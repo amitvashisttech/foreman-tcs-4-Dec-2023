@@ -1,0 +1,25 @@
+---
+
+# This is going to be my first playbook
+# Following is my first play
+
+- hosts: 'web:db'
+  name: "Common Package Deployment"
+  tasks: 
+  - name: Go & get the disk Usage. 
+    command: 'df -h'
+
+  - name: UnInstall Tree Package 
+    apt: name=tree state=absent
+
+  - name: Install Tree Package 
+    apt: name=tree state=present
+
+
+
+# Following is my second play
+- hosts: all
+  name: "Disable Firewall"
+  tasks: 
+  - name: Disable Firewall Service
+    service: name=ufw state=stopped 

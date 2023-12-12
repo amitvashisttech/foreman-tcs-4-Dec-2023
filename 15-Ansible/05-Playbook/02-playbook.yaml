@@ -1,0 +1,16 @@
+---
+
+# This is going to be my first playbook
+# Following is my first play
+
+- hosts: all
+  name: "Common Package Deployment"
+  tasks: 
+  - name: Go & get the disk Usage. 
+    command: 'df -h'
+
+  - name: UnInstall Tree Package 
+    apt: name=tree state=absent
+
+  - name: Install Tree Package 
+    apt: name=tree state=present

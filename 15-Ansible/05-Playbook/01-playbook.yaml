@@ -1,0 +1,9 @@
+---
+
+# This is going to be my first playbook
+# Following is my first play
+
+- hosts: all
+  tasks: 
+  - name: Go & get the disk Usage. 
+    command: 'df -h'
