@@ -1,0 +1,4 @@
+---
+
+- name: Install NTP Clinet
+  apt: name=ntp state=present

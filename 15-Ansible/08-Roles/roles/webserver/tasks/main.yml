@@ -1,0 +1,57 @@
+---
+# tasks file for webserver
+#
+
+
+- name: Install Apache Packages
+  apt: name=apache2 state=present
+  when: ansible_os_family == "Debian"
+
+- name: Install Httpd Packages
+  yum: name=httpd state=present
+  when: ansible_os_family == "RedHat"
+
+- name: Bring up Apache Service
+  service: name=apache2 state=started
+  when: ansible_os_family == "Debian"
+
+- name: Bring up Httpd Service
+  service: name=httpd state=started
+  when: ansible_os_family == "RedHat"
+
+
+- name: Deploy Common Index Web Page
+  copy: src=files/index.html dest={{doc_root}}/index.html
+
+- name: Check Who am I
+  command: whoami
+  register: username
+
+- debug: msg="Welcome to ansible web deployment playbook"
+
+- debug: var=username
+
+
+- name: Check the info file exist or not ?
+  command: ls {{doc_root}}/info.html
+  register: result
+  ignore_errors: yes
+
+- debug: msg="Unable to locate the info.html files"
+  when: result is failed
+
+- debug: msg="Able to locate the info.html files.!!"
+  when: result is succeeded
+
+
+- name: Deploy Info Web Page
+  copy: src=file/info.html dest={{doc_root}}/info.html
+  when: result is failed
+
+
+
+- name: Deploy Info Web Page
+  template: src=templates/info.j2 dest={{doc_root}}/info-temp.html
+
+- name: Output Redirect
+  shell: 'echo "Hello Redirect Out Program - {{ansible_hostname}} & {{ username}}" >> /tmp/output.txt'

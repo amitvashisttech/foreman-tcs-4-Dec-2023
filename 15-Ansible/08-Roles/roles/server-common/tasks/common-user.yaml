@@ -1,0 +1,11 @@
+---
+
+- name: Add Common Users
+  user: name={{item}} password="12345"
+
+  with_items:
+  - ansible
+  - jboss
+  - nginx
+  - tomcat
+  - amitv

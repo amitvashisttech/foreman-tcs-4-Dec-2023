@@ -1,0 +1,72 @@
+1107  cd 08-Roles/
+ 1108  ls
+ 1109  mkdir roles
+ 1110  ls
+ 1111  cd roles/
+ 1112  ansible-galaxy init firewall
+ 1113  ls
+ 1114  cd ..
+ 1115  ls
+ 1116  tree roles/
+ 1117  ls
+ 1118  cd roles/
+ 1119  ls
+ 1120  ansible-galaxy init server-common
+ 1121  cd ..
+ 1122  ls
+ 1123  tree roles/
+ 1124  cd -
+ 1125  ansible-galaxy init webserver
+ 1126  ls
+ 1127  vim firewall/tasks/main.yml
+ 1128  ls
+ 1129  cd ..
+ 1130  ls
+ 1131  mv playbook.yaml playbook.yaml.old
+ 1132  ls
+ 1133  vim playbook.yaml
+ 1134  ls
+ 1135  ansible-playbook playbook.yaml
+ 1136  s
+ 1137  ls
+ 1138  vim roles/server-common/tasks/common-user.yaml
+ 1139  vim roles/server-common/tasks/ntp.yaml
+ 1140  ls
+ 1141  vim playbook.yaml
+ 1142  ls
+ 1143  ansible-playbook playbook.yaml
+ 1144  tree roles/server-common/
+ 1145  vim roles/server-common/tasks/main.yml
+ 1146  ansible-playbook playbook.yaml
+ 1147  ls
+ 1148  cd roles/
+ 1149  ls
+ 1150  cd webserver/
+ 1151  ls
+ 1152  cp -rf ../../files/* files/
+ 1153  cp -rf ../../templates/* templates/
+ 1154  ls
+ 1155  vim vars/main.yml
+ 1156  ls
+ 1157  cat ../../playbook.yaml.old
+ 1158  ls
+ 1159  vim tasks/main.yml
+ 1160  ls
+ 1161  cd ..
+ 1162  ls
+ 1163  cd ..
+ 1164  ls
+ 1165  vim playbook.yaml
+ 1166  ansible-playbook playbook.yaml
+ 1167  s
+ 1168  ls
+ 1169  rm -rf files templates/
+ 1170  ls
+ 1171  rm -rf playbook.yaml.old
+ 1172  ls
+ 1173  cp -rf playbook.yaml playbook-2.yaml
+ 1174  ls
+ 1175  vim playbook-2.yaml
+ 1176  ls
+ 1177  ansible-playbook playbook-2.yaml
+

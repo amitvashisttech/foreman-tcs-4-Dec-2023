@@ -1,0 +1,11 @@
+---
+# tasks file for firewall
+
+- name: Disable Firewall Service
+  service: name=ufw state=stopped enabled=False
+  when: ansible_os_family == "Debian"
+
+
+- name: Disable FirewallD Service
+  service: name=firewald state=stopped enabled=False
+  when: ansible_os_family == "RedHat"
