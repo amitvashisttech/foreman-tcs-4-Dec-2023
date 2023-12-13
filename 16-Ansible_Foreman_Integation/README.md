@@ -1,10 +1,7 @@
-	   
 # Configuring your Deployment to Run Ansible Roles
 
 ### 1. Ansible Required foreman proxy ssh-key public to be gernrated before we enable the plug-in.
 ```
-sudo mkdir -p /var/lib/foreman-proxy/ssh/
-sudo chmod 777 /var/lib/foreman-proxy/ssh/
 sudo -u foreman-proxy ssh-keygen -t rsa -f /var/lib/foreman-proxy/ssh/id_rsa_foreman_proxy
 ```
 
@@ -64,28 +61,24 @@ Foreman imports Ansible roles and variables from paths based on configuration in
 
 7. For more details, click on the CI name & you will see the output of previous execution. 
 
+8. If DNS Resolution didn't work then, update the /etc/resolve.conf - nameserver to point to foreman proxy ip.  ( nameserver : 192.168.0.1 )
 
-### 6. Assign a role to a host. 
+9. ReCall the Password of the Root User or reset 
 ```
-1. In the Foreman web UI, navigate to hosts > All Hosts.
-
-2. Select the hosts "katello-foreman.example.com"
-
-3. Click Edit, in the Ansible Roles Section, Select your role "motd" & assign the role to a host. 
-
-4. Click Submit
-
-5. In the Foreman web UI, navigate to hosts > All Hosts.
-
-6. Select the hosts "katello-foreman.example.com"
-
-7. Select Sechedule Remote Job, Select "Run Ansible role" 
-
-8. Click Submit
-
-9. Check the Progress of the Job. 
-
-10. For more details, click on the CI name & you will see the output of previous execution.
-
+passwd
+``` 
+10. Enable Root SSH Password Login. 
+```
+sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/g" /etc/sshd/sshd_config
+systemctl restart sshd 
 ```
 
+
+11. Copy the ssh public key in the authorized key. 
+```
+ssh-copy-id -i /var/lib/foreman-proxy/ssh/id_rsa_foreman_proxy.pub root@katello-foreman.example.com
+```
+
+12. ReRun the Job - It Should work post SSH Connection.  
+
+11. Now Re-Run the Job. 
