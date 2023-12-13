@@ -3,6 +3,8 @@
 
 ### 1. Ansible Required foreman proxy ssh-key public to be gernrated before we enable the plug-in.
 ```
+sudo mkdir -p /var/lib/foreman-proxy/ssh/
+sudo chmod 777 /var/lib/foreman-proxy/ssh/
 sudo -u foreman-proxy ssh-keygen -t rsa -f /var/lib/foreman-proxy/ssh/id_rsa_foreman_proxy
 ```
 
