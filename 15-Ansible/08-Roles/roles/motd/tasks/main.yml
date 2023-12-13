@@ -1,0 +1,5 @@
+---
+# tasks file for motd
+
+- name: Deploy Custom Motd Message File
+  template: src=templates/motd.j2 dest=/etc/motd
