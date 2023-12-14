@@ -85,3 +85,47 @@ ssh-copy-id -i /var/lib/foreman-proxy/ssh/id_rsa_foreman_proxy.pub root@katello-
 12. ReRun the Job - It Should work post SSH Connection.  
 
 11. Now Re-Run the Job. 
+
+
+## 6. Assign a role to a host. 
+```
+1. In the Foreman web UI, navigate to hosts > All Hosts.
+
+2. Select the hosts "katello-foreman.example.com"
+
+3. Click Edit, in the Ansible Roles Section, Select your role "motd" & assign the role to a host. 
+
+4. Click Submit
+
+5. In the Foreman web UI, navigate to hosts > All Hosts.
+
+6. Select the hosts "katello-foreman.example.com"
+
+7. Select Sechedule Remote Job, Select "Run Ansible role" 
+
+8. Click Submit
+
+9. Check the Progress of the Job. 
+
+10. For more details, click on the CI name & you will see the output of previous execution.
+
+```
+
+### 7. Remote Execution
+```
+1. In the Foreman web UI, navigate to hosts > All Hosts.
+
+2. Select the hosts "katello-foreman.example.com"
+
+3. Select Sechedule Remote Job.
+
+4. In the Job Invocaton, fill the following details:
+
+    - Job Category : Commands
+        - Job Temaplete: Run Commands - SSH Defaults
+        - Search Query : name ^(katello-foreman.example.com)
+        - Command      : cat /etc/motd
+5. Click Submit.
+
+6. Check the Progress of the Job.
+```
