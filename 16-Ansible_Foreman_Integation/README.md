@@ -65,7 +65,9 @@ Foreman imports Ansible roles and variables from paths based on configuration in
 
 9. ReCall the Password of the Root User or reset 
 ```
+```
 passwd
+```
 ``` 
 10. Enable Root SSH Password Login. 
 ```
