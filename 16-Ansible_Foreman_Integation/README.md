@@ -71,6 +71,7 @@ passwd
 ``` 
 10. Enable Root SSH Password Login. 
 ```
+```
 sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/g" /etc/sshd/sshd_config
 systemctl restart sshd 
 ```
