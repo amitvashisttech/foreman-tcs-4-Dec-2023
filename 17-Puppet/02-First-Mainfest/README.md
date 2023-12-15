@@ -13,7 +13,7 @@ cd /etc/puppetlabs/code/environments/production/mainfests
 cat nodes.pp
 ```
 ```
-node 'katello-foreman.exmaple.com' {
+node 'katello-foreman.example.com' {
   file {'/etc/motd':
     ensure => 'present',
     content => 'This Host is Managed by Puppet.',
