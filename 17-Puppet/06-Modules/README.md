@@ -23,6 +23,12 @@ pdk new module motd
 ```
 
 
+### Test & Apply Modules 
+```
+puppet apply nodes.pp 
+```
+
+
 ### Build Puppet Modules
 ```
 cd modules/motd 
@@ -31,7 +37,4 @@ pdk build
 ls pkg/y-motd-0.1.0.tar.gz
 ```
 
-### Apply Modules 
-```
-puppet apply nodes.pp 
-```
+
