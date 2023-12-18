@@ -10,40 +10,29 @@ Foreman Backup Procedure
 ```
 3. Repositories Backup
 ```
-[root@foreman backup]# tar --selinux -cvf pulp_data.tar /var/lib/pulp /var/www/pub
+[root@foreman backup]# tar --selinux -cvf pulp_data.tar /var/lib/pulp /var/www/html/pub
 ```
 
 4. Offline Database Backup
 ```
-[root@foreman backup]# tar --selinux -czvf mongo_data.tar.gz /var/lib/mongodb/
-[root@foreman backup]# tar --selinux -czvf pgsql_data.tar.gz /var/lib/pgsql/data/
+[root@foreman ]# foreman-maintain backup offline /backup 
 ```
 
-5. MongoDB Database Backup
-Use online tools to backup the pulp database (MongoDB) while the database is running. Execute the following command in the backup directory
+5. Incremental backup
+Take 1st incremental backup (this will create a new directory under /tmp/backups to house the new backup, just like the full backup directory):
 ```
-[root@foreman backup]# mongodump --host localhost --out $BDIR/mongo_dump
+foreman-maintain backup offline --incremental /backup/FULL_BACKUP_DIR /backup
 ```
-6. Katello Service Status
+
+
+6. Sample run of online backup
 ```
-[root@foreman ~]# katello-service status
-tomcat6 (pid 2902) is running...                           [  OK  ]
-mongod (pid  3397) is running...
-listening on 127.0.0.1:27017
-connection test successful
-qpidd (pid  3043) is running...
-elasticsearch (pid  2754) is running...
-celery init v10.0.
-Using config script: /etc/default/pulp_resource_manager
-node resource_manager (pid 3522) is running...
-celery init v10.0.
-Using config script: /etc/default/pulp_workers
-node reserved_resource_worker-0 (pid 3585) is running...
-celery init v10.0.
-Using configuration: /etc/default/pulp_workers, /etc/default/pulp_celerybeat
-pulp_celerybeat (pid 3460) is running.
-httpd (pid  2999) is running...
-dynflow_executor is running.
-dynflow_executor_monitor is running.
-[root@foreman ~]#
+foreman-maintain backup online -y /backup
+```
+
+7. Restore Incremental Backups
+```
+foreman-maintain restore /backups/FULL_BACKUP
+foreman-maintain restore -i /backups/FIRST_INCREMENTAL
+foreman-maintain restore -i /backups/SECOND_INCREMENTAL
 ```
