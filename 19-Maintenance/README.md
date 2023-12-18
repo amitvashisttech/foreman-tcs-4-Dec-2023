@@ -6,7 +6,7 @@ Foreman Backup Procedure
 ```
 2. Backup the configuration and data files:
 ```
-[root@foreman backup]# tar --selinux -czvf config_files.tar.gz  /etc/katello /etc/elasticsearch  /etc/candlepin  /etc/pulp  /etc/gofer  /etc/pki/katello  /etc/pki/pulp  /etc/qpidd.conf  /etc/sysconfig/katello  /etc/sysconfig/elasticsearch  /root/ssl-build  /var/www/html/pub/*
+[root@foreman backup]# tar --selinux -czvf config_files.tar.gz  /etc/candlepin  /etc/pulp  /etc/pki/katello   /root/ssl-build  /var/www/html/pub/*
 ```
 3. Repositories Backup
 ```
